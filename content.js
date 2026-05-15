@@ -15,12 +15,13 @@ document.addEventListener("keydown", (event) => {
             if (!captionButton) return;
 
             const captionsOn =
-                captionButton.getAttribute("aria-pressed") === "true ";
+                captionButton.getAttribute("aria-pressed") === "true";
 
             if (captionsOn !== "true") {
                 captionButton.click();
                 captionTimeout = setTimeout(() => {
-                    captionButton.click();
+                    if (captionButton.getAttribute("aria-pressed") === "true")
+                        captionButton.click();
                 }, timeoutDuration);
             }
         }
