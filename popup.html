@@ -1,18 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-  <title>CaptionPeek</title>
-  <link rel="stylesheet" href="popup.css">
-</head>
-<body>
-  <div class="container">
-    <h2>CaptionPeek</h2>
-    <p>Extension is <span id="status">Active</span></p>
-    <label class="switch">
-      <input type="checkbox" id="toggleSwitch" checked>
-      <span class="slider round"></span>
-    </label>
-  </div>
-  <script src="popup.js"></script>
-</body>
+    <head>
+        <title>CaptionPeek</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="popup.css" />
+    </head>
+    <body>
+        <div class="popup-shell">
+            <div class="card">
+                <div class="hero">
+                    <div class="eyebrow">YouTube companion</div>
+                    <h2>CaptionPeek</h2>
+                    <p class="subtitle">
+                        Turn captions on when you rewind, then fade them out
+                        automatically.
+                    </p>
+                </div>
+
+                <div class="status-row">
+                    <div>
+                        <div class="label">Extension status</div>
+                        <div class="status-line">
+                            <span class="status-dot"></span
+                            ><span id="status">Active</span>
+                        </div>
+                    </div>
+                    <label
+                        class="switch"
+                        aria-label="Enable or disable CaptionPeek"
+                    >
+                        <input type="checkbox" id="toggleSwitch" checked />
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+
+                <div class="settings">
+                    <div class="label">Caption duration</div>
+                    <div class="settings-input">
+                        <input
+                            type="number"
+                            id="timeoutInput"
+                            min="1"
+                            max="60"
+                            value="7"
+                        />
+                        <span>seconds</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="popup.js"></script>
+    </body>
 </html>
