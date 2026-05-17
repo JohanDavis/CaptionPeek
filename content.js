@@ -17,7 +17,7 @@ document.addEventListener("keydown", (event) => {
             const captionsOn =
                 captionButton.getAttribute("aria-pressed") === "true";
 
-            if (captionsOn !== "true") {
+            if (!captionsOn) {
                 captionButton.click();
                 captionTimeout = setTimeout(() => {
                     if (captionButton.getAttribute("aria-pressed") === "true")
